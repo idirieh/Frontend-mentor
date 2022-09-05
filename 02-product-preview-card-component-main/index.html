@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      /* primary brand colors */
+      --clr-primary: hsl(30, 38%, 92%);
+      --clr-secondary: hsl(158, 36%, 37%);
+      /* secondary brand colors */
+      --clr-dard-blue: hsl(212, 21%, 14%);
+      --clr-dard-cyan: hsl(156, 42%, 18%);
+      --clr-dard-grayish-blue: hsl(228, 12%, 48%);
+      /* neutrals */
+      --clr-ntrl-min: hsl(0, 0%, 100%);
+      /* fonts */
+      --ff-base: 'Montserrat', sans-serif;
+      --ff-title: 'Fraunces', serif;
+      --fs-body: .87rem;
+      --fs-title: 2.5rem;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--clr-primary);
+      padding: 0;
+      margin: 0;
+      font-family: var(--ff-base);
+    }
+    img {
+      max-width: 100%;
+    }
+
+    .sp {
+      margin-left: 1em;
+    }
+    .d-flex {
+      display: flex;
+      justify-content: space-around;
+    }
+    .card {
+      background-color: var(--clr-ntrl-min);
+      width: 90%;
+      max-width: 450px;
+      padding-bottom: 1em;
+      margin: 5vh auto;
+      border-radius: 10px;
+    }
+    .img1 {
+      border-radius: 10px 10px 0 0;
+    }
+    .img2 {
+      display: none;
+    }
+    .card-content {
+      padding: 1em 1.3em;
+    }
+    .card-title-text {
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--clr-dard-grayish-blue);
+    }
+    .card-title {
+      font-family: var(--ff-title);
+      font-size: var(--fs-title);
+      color: var(--clr-dard-blue);
+      margin: 0;
+    }
+    .card-text {
+      font-weight: 500;
+      color: var(--clr-dard-grayish-blue);
+    }
+    .new-price {
+      font-family: var(--ff-title);
+      font-size: var(--fs-title);
+      color: var(--clr-secondary);
+
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: var(--clr-dard-grayish-blue);
+      align-self: center;
+    }
+    .btn {
+      display: block;
+      background-color: var(--clr-secondary);
+      font-family: inherit;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--clr-ntrl-min);
+      border: none;
+      width: 100%;
+      padding: .75em 1.2em;
+      margin-top: 1em;
+      border-radius: 10px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: var(--clr-dard-cyan);
+    }
+
+    @media (min-width: 40em) {
+      .card {
+        display: flex;
+        max-width: 650px;
+        padding-bottom: 0;
+        margin: 20vh auto;
+      }
+      .card-content {
+        width: 95%;
+        padding: 1em 1.3em;
+      }
+      .img1 {
+        display: none;
+      }
+      .img2 {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+<div class="card">
+    <div class="img">
+      <img src="images/image-product-mobile.jpg" alt="" class="img1">
+      <img src="images/image-product-desktop.jpg" alt="" class="img2">
+    </div>
+
+    <div class="card-content">
+
+      <p class="card-title-text">Parfume</p>
+      <h2 class="card-title">Gabrielle Essence Eau De Parfum</h2>
+      <p class="card-text">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.
+      </p>
+        <span class="new-price">$149.99</span>
+        <span class="old-price sp">$169.99</span>
+      <button class="btn"> <img src="images/icon-cart.svg" alt=""><span class="sp">Add to Cart</span></button>
+
+    </div>
+</div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Idirieh</a>.
+  </div>
+</body>
+</html>

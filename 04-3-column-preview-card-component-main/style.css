@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+    /* primary */
+    --clr-orange: hsl(31, 77%, 52%);
+    --clr-cyan-lt: hsl(184, 100%, 22%);
+    --clr-cyan-dr: hsl(179, 100%, 13%);
+    /* neutral */
+    --clr-ntrl-p: hsla(0, 0%, 100%, 0.75);
+    --clr-ntrl-main: hsl(0, 0%, 95%);
+
+    /* fonts */
+    --ff-400: 'Lexend Deca', sans-serif;
+    --ff-700: 'Big Shoulders Display', cursive;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-ntrl-main);
+    font-family: var(--ff-400);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.main-content {
+    width: 80%;
+    max-width: 900px;
+    margin: 20vh auto;
+    display: grid;   
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   
+    border-radius: .5em; 
+    overflow: hidden;
+}
+
+.container {
+    padding: 2.5em;
+}
+
+.sedans {
+    background-color: var(--clr-orange);
+}
+
+.suvs {
+    background-color: var(--clr-cyan-lt);
+}
+
+.luxury {
+    background-color: var(--clr-cyan-dr);
+}
+
+.title {
+    color: var(--clr-ntrl-main);
+    font-family: var(--ff-700);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.text {
+    color: var(--clr-ntrl-p);
+    line-height: 1.7;
+}
+
+.btn {    
+    padding: .75em 2em;
+    margin-top: 4.5em;
+    border: none;
+    border-radius: 20px;    
+}
+
+.btn1 {color: var(--clr-orange);}
+.btn2 {color: var(--clr-cyan-lt);}
+.btn3 {color: var(--clr-cyan-dr);}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--clr-ntrl-main);
+    cursor: pointer;
+    outline: 2px solid var(--clr-ntrl-main);
+}
