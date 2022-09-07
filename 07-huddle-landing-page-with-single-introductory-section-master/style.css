@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
     /* colors */
@@ -7,6 +8,9 @@
 
     /* fonts */
     --ff-main: 'Open Sans', sans-serif;
+    --ff-titles: 'Poppins', sans-serif;
+    --fw-400: 400;
+    --fw-600: 600;
 }
 
 .attribution { font-size: 11px; text-align: center; }
@@ -81,8 +85,9 @@ select {
 }
 
 body {
-    background-image: url(images/bg-desktop.svg);
+    background-image: url(images/bg-mobile.svg);
     background-repeat: no-repeat;
+    background-size: 100%;
     background-color: var(--clr-violet);
     color: white;
     font-family: var(--ff-main);
@@ -93,8 +98,8 @@ img {
 }
 
 .container {
-    margin: 2.5em 1.5em;
-    
+    margin: 3em 1.3em;
+    padding: 0 1em;
 }
 
 .logo {
@@ -102,18 +107,99 @@ img {
 }
 
 .main-title {
-    font-size: 1.5em;
+    font-family: var(--ff-titles);
+    font-weight: var(--fw-600);
+    margin: 3.5rem 0 1.3rem;
 }
 
 .main-content {
     text-align: center;
+    font-weight: var(--ff-main);
 }
 
-.socials {
+/* .main-text {
+    margin-bottom: 3.125rem;
+} */
 
+.btn {
+    background-color: #fff;
+    font: inherit;
+    color: var(--clr-violet);
+    font-size: .75rem;
+    padding: 1em 6.5em;
+    outline: none;
+    border: none;
+    margin: 1.5rem 0 3.125rem;
+    border-radius: 2em;
+    box-shadow: 0 20px 35px -10px black;
 }
 
-.social {
-    width: 20px;
-    border: 1px solid wheat;
+.btn:hover,
+.btn:focus {
+  background-color: var(--clr-magenta);
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-media {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    font-size: 1rem;
+    outline: 1px solid white;
+    border-radius: 50%;
+}
+
+.social-link a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-magenta);
+}
+
+.social-link:hover,
+.social-link:focus {
+  outline: 1px solid var(--clr-magenta);
+}
+
+@media screen and (min-width: 60em) {
+  
+  body {
+    background-image: url(images/bg-desktop.svg);
+  }
+  .container {
+    display: flex;
+    gap: 2.5em;
+    align-items: center;
+  }
+  .main-content {
+    max-width: 500px;
+    text-align: left;
+    
+  }
+  .main-title {
+    font-size: 2.4rem;
+  }
+  .social-media {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  .btn {
+    font-size: 1.1rem;
+    padding: .75em 4.3em;
+  }
+
 }
