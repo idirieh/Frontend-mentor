@@ -51,8 +51,11 @@ video {
 
 body {
   background-color: var(--clr-white);
+  background-image: url(images/bg-pattern-top-mobile.svg),
+    url(images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
   font-family: var(--ff-main);
-  /* font-size: var(--fz-main); */
   font-weight: var(--fw-reg);
 }
 
@@ -146,6 +149,14 @@ main {
 }
 
 @media (min-width: 50em) {
+  body {
+    background-image: url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg);
+    background-position: right 56vw bottom 88vh, right 52vw bottom 100vh,
+      left 20vw top 38vh, left 33vw top 50vh;
+  }
   main {
     /* background-color: aqua; */
     text-align: left;
