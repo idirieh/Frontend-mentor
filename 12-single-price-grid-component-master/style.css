@@ -37,4 +37,102 @@ html {
 body {
   background-color: var(--light-gray);
   font-family: var(--ff-main);
+  font-weight: var(--fw-400);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: min(55vh, 100%);
+  margin: 10vh auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hero {
+  background-color: #fff;
+  padding: 1.125em;
+}
+
+.main-header {
+  color: var(--Cyan);
+  font-size: 1.3rem;
+}
+
+.sub-text {
+  color: var(--bright-yellow);
+}
+
+.desc {
+  color: var(--grayish-blue);
+}
+
+.cta {
+  background-color: hsl(179, 61%, 44%);
+  color: #fff;
+  padding: 1.125em;
+}
+
+.price {
+  font-size: 1.7rem;
+  font-weight: var(--fw-700);
+}
+
+.price span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  font-weight: var(--fw-400);
+}
+.cta p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: var(--fw-400);
+  margin: 0;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: var(--bright-yellow);
+  color: #fff;
+  width: 95%;
+  border: none;
+  outline: none;
+  padding: 1em 0;
+  margin: 1.6em auto 0.7em;
+  border-radius: 5px;
+}
+
+.bottom {
+  background-color: hsl(179, 47%, 52%);
+  color: #fff;
+  padding: 1.125em;
+}
+
+.last-text {
+  color: rgba(255, 255, 255, 0.6);
+  width: 60%;
+  font-size: 0.95rem;
+  font-weight: var(--fw-400);
+}
+
+@media (min-width: 60em) {
+  .container {
+    max-width: min(75vh, 100%);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero {
+    flex-grow: 1;
+    padding: 1.5em 1.8em;
+  }
+  .cta {
+    flex-basis: 50%;
+    padding: 1.5em 1.8em;
+  }
+  .bottom {
+    flex-basis: 50%;
+    padding: 1.5em 1.8em;
+  }
+  .last-text {
+    width: 80%;
+  }
 }
