@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --very-dark-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --dv-light-grayish-blue: hsl(240, 5%, 91%);
+
+  /* text colors */
+  --tx-very-dark-blue: hsl(238, 29%, 16%);
+  --tx-soft-red: hsl(14, 88%, 65%);
+}
+
+/* CSS reset */
+
+/* Simple CSS Reset */
+
+/* Apply a box-sizing reset to include padding and borders in width/height calculations */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Reset heading margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* Reset anchor text decoration and color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset button and input styles */
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Reset image border */
+img {
+  border: none;
+}
+
+/* Set a standard border box for images and other replaced elements */
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add a simple clearfix */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.mian-container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 338px;
+  padding: 20px 20px 40px;
+  margin: 25vh auto;
+  border-radius: 15px;
+  position: relative;
+}
+
+.the-img {
+  text-align: center;
+}
+
+.main-img {
+  height: 250px;
+  width: 250px;
+  margin-top: -160px;
+}
+
+.shadow {
+  margin-top: -135px;
+}
+
+.main-heading {
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.question {
+  color: var(--dark-grayish-blue);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.3em 0;
+  cursor: pointer;
+}
+
+.question:hover {
+  color: var(--tx-soft-red);
+}
+
+.question img {
+  align-self: center;
+}
+
+.answer {
+  color: var(--dark-grayish-blue);
+  height: 0;
+  overflow: hidden;
+  transition: 500ms;
+}
+
+hr {
+  color: var(--dv-light-grayish-blue);
+  opacity: 0.3;
+  margin: 1.3em;
+}
+
+/* styles.css */
+
+/* Define the enlarged font size for questions */
+.enlarged {
+  font-size: 1.12em;
+  color: #000;
+}
+
+/* Define the highlighted background color for answers */
+.expanded {
+  height: 50px;
+}
