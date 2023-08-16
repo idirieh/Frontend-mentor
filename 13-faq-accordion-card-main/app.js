@@ -1,14 +1,3 @@
-// console.log("Hello there!");
-
-const allQues = document.querySelectorAll(".question");
-const allAnswers = document.querySelectorAll(".answer");
-
-allQues.forEach((ans) => {
-  ans.addEventListener("click", (e) => {
-    e.currentTarget.classList.toggle("active");
-  });
-});
-
 // Get all question div elements
 const questionDivs = document.querySelectorAll(".question");
 
