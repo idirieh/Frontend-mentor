@@ -146,15 +146,17 @@ hr {
   margin: 1.3em;
 }
 
-/* styles.css */
-
-/* Define the enlarged font size for questions */
 .enlarged {
   font-size: 1.12em;
   color: #000;
 }
 
-/* Define the highlighted background color for answers */
 .expanded {
   height: 50px;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
 }
