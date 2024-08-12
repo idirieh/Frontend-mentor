@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    /* Colors */
+    --Yellow: hsl(47, 88%, 63%);
+    --White: hsl(0, 0%, 100%);
+    --Gray-500: hsl(0, 0%, 42%);
+    --Gray-950: hsl(0, 0%, 7%);
+
+    /* Typography */
+    --ff-base: "Figtree", sans-serif;;
+
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+body {
+    background-color: var(--Yellow);
+    font-family: var(--ff-base);
+    color: var(--Gray-500);
+    font-weight: 500;
+    line-height: 1.5;
+    height: 100vh;
+}
+
+.card {
+    background-color: #fff;
+    /* width: 90%;
+    max-width: 400px; */
+    width: min(90%, 400px); /* same as the above */
+    padding: 1.2em;
+    margin: 25vh auto;
+    border-radius: 15px;
+    box-shadow: 10px 7px 0 black;
+}
+
+.card-content img {
+    border-radius: 10px;
+    width: 350px;
+}
+
+.card-content div {
+    margin-bottom: 1.2rem;
+}
+
+.card-content .tag {
+    background-color: var(--Yellow);
+    color: var(--Gray-950);
+    font-size: .9rem;
+    font-weight: 800;
+    display: inline-block;
+    padding: .5rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.card-content .title {
+    color: var(--Gray-950);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.info {
+    display: flex;
+    align-content: center;
+    gap: 1rem;
+}
+
+.info img {    
+    width: 40px;
+    height: auto;
+}
+
+.info .name {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--Gray-950);
+    margin-bottom: 0;
+    align-self: center;
+}
+
+/* @container */
