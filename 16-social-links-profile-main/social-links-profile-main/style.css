@@ -2,7 +2,7 @@
 
 :root {
     /* Colors */
-    --main-clr: hsl(75, 94%, 57%);
+    --green-clr: hsl(75, 94%, 57%);
     --grey-clr-700:hsl(0, 0%, 20%);
     --grey-clr-800:hsl(0, 0%, 12%);
     --grey-clr-900:hsl(0, 0%, 8%);
@@ -71,16 +71,64 @@ body {
     background-color: var(--grey-clr-900);
     color: white;
     min-height: 100vh;
+    font-size: 14px;
     /* display: grid;
     place-content: center; */
 }
 
 .card {
     background-color: var(--grey-clr-800);
-    width: min(80%, 400px);
-    margin: 25vh auto;
+    width: min(80%, 350px);
+    margin: 10vh auto;
+    padding: 1.5rem 1.3rem 1rem;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* .info {
+  display: flex;
+  flex-direction: column;
+
+} */
+
+.card img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 
+.card .main-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px 0 2px;
+}
+
+
+.card .location {
+  color: var(--green-clr);
+  margin-bottom: 1.9rem;
+}
+
+.card .text {
+  opacity: .7;
+  font-weight: 400;
+  margin-bottom: 1.4rem;
+}
+
+.btn {
+  background-color: var(--grey-clr-700);
+  margin: 1.1rem;
+  padding: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--green-clr);
+  color: var(--grey-clr-900)
+}
 
 
