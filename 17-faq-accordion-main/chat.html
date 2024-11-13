@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Container for the background split */
+.background {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #2b0a3d 50%, #f1e8ff 50%);
+}
+
+/* Card styling */
+.faq-card {
+  width: 80%;
+  max-width: 500px;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Heading with icon */
+.faq-card h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3d155f;
+}
+
+.faq-card .icon {
+  font-size: 1.5rem;
+  color: #7e3ff2;
+  margin-right: 0.5rem;
+}
+
+/* FAQ item styling */
+.faq-item {
+  margin-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+}
+
+.faq-item:first-of-type {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #3d155f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.answer {
+  display: none;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Show answer when active */
+.faq-item.active .answer {
+  display: block;
+}
+
+.faq-item.active .question span {
+  transform: rotate(180deg);
+}
+
+div.apple, div.orange {
+  height: 100px;
+  width: 350px;
+  background-color: green;
+}
+
+.btn + div.orange {
+  background-color: aqua;
+}
+
+.btn + div.apple {
+  background-color: aquamarine;
+}
+
+.cont:nth-child(2) {
+  background-color: #2b0a3d;
+}
+
+    </style>
+    <title>Chatgpt Gen</title>
+</head>
+<body>
+    <div class="background">
+        <!-- <div class="faq-card">
+          <h2><span class="icon">★</span> FAQs</h2>
+          <div class="faq-item">
+            <button class="question">What is Frontend Mentor, and how will it help me? <span>−</span></button>
+            <div class="answer">
+              <p>Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="question">Is Frontend Mentor free? <span>+</span></button>
+            <div class="answer">
+              <p>Yes, Frontend Mentor has a free tier available, along with premium challenges.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="question">Can I use Frontend Mentor projects in my portfolio? <span>+</span></button>
+            <div class="answer">
+              <p>Absolutely! It's encouraged to add these projects to your portfolio.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="question">How can I get help if I'm stuck on a challenge? <span>+</span></button>
+            <div class="answer">
+              <p>You can seek help in the community forums or check out resources provided by Frontend Mentor.</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      
+      <div class="cont">
+        <button class="btn">1</button>
+        <div class="apple"></div>
+        <button class="btn">2</button>
+        <div class="orange"></div>
+        <button class="btn">3</button>
+        <div class="apple"></div>
+        <button class="btn">4</button>
+        <div class="apple"></div>
+      </div>
+
+</body>
+</html>
+
+<script>
+  const btns = document.querySelectorAll('.btn');
+
+  btns.forEach(element => {
+      element.addEventListener('click', () => {
+      console.log(element.innerText)
+    })
+    // console.log(currentElement)
+  });
+</script>

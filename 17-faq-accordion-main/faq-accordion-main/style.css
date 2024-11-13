@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Colors */
+    --clr-light-pink:hsl(275, 100%, 97%);
+    --clr-grayish-purple: hsl(292, 16%, 49%);
+    --clr-dark-purple: hsl(292, 42%, 14%);
+    --clr-whtie: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: var(--clr-light-pink);
+    font-family: "Work Sans", sans-serif;
+}
+
+.faq-card {
+    background-color: var(--clr-whtie);
+    width: min(90%, 500px);
+    margin: 15vh auto;
+    padding: 1.7rem;
+    border-radius: 5px;
+    box-shadow: 0 -3px 97px -6px var(--clr-grayish-purple);
+}
+
+.heading {
+    display: flex;
+}
+
+.heading img {
+    width: 25px;
+    margin-right: 25px;
+}
+
+.faq-item {
+    margin: 1.7rem 0 2rem;
+    position: relative;
+}
+
+.q {
+    color: var(--clr-dark-purple);
+    font-weight: 600;
+    width: 22ch;
+}
+
+.faq-item .plus-btn {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.a {
+    color: var(--clr-grayish-purple);
+    /* padding-bottom: 1em; */
+    margin: 1.5rem 0;
+    height: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 0 hsla(292, 16%, 49%, 30%);
+    transition: 500ms ease-in-out;
+}
+
+.active {
+    height: auto;
+    padding-bottom: 1em;
+}
+
+@media screen and (min-width: 40em) {
+    body {
+        background-image: url(assets/images/background-pattern-desktop.svg);
+    }
+    .q{
+        width: 40ch;
+    }
+}
