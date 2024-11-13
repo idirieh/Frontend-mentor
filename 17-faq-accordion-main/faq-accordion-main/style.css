@@ -47,7 +47,7 @@ body {
     height: 100vh;
     background-repeat: no-repeat;
     background-position: top;
-    background-color: var(--clr-light-pink);
+    background-color: var(--clr-light-pink);    
     font-family: "Work Sans", sans-serif;
 }
 
@@ -74,7 +74,7 @@ body {
     position: relative;
 }
 
-.q {
+.question {
     color: var(--clr-dark-purple);
     font-weight: 600;
     width: 22ch;
@@ -88,9 +88,8 @@ body {
     transition: 500ms;
 }
 
-.a {
+.answer {
     color: var(--clr-grayish-purple);
-    /* padding-bottom: 1em; */
     margin: 1.5rem 0;
     height: 0;
     overflow: hidden;
@@ -107,7 +106,7 @@ body {
     body {
         background-image: url(assets/images/background-pattern-desktop.svg);
     }
-    .q{
+    .question{
         width: 40ch;
     }
 }
