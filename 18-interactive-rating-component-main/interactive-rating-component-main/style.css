@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Colors */
+    --clr-orange: hsl(25, 97%, 53%);
+    --clr-light-grey: hsl(217, 12%, 63%);
+    --clr-light-blue: hsl(213, 20%, 24%);
+    --clr-dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+
+
+    /* Typography */
+    --ff-main: "Overpass", sans-serif;
+    --fz-main: 14px;
+    --fw-700: 700;
+    --fw-400: 400;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    background-color: var(--very-dark-blue);
+    color: white;
+    font-family: var(--ff-main);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--clr-dark-blue);
+    width: min(85%, 350px);
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+}
+
+.review-result {
+    text-align: center;
+}
+
+.review-result img{
+    margin: 0 auto;
+}
+
+.img {
+    background-color: var(--clr-light-blue);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1.5rem 0 .2rem;
+}
+
+.text {
+    color: var(--clr-light-grey);
+    font-size: .95rem;
+    margin: .5rem 0 1.3rem;
+}
+
+.numbers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.num {
+    background-color: var(--clr-light-blue);
+    color: var(--clr-light-grey);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.num:hover {
+    background-color: var(--clr-orange);
+    color: var(--very-dark-blue)
+}
+
+.btn {
+    background-color: var(--clr-orange);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: .8rem 2.5rem;
+    margin: 1.5rem 0 0;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--very-dark-blue);
+}
+
+.active {
+    background-color: white;
+    color: var(--very-dark-blue);
+}
+
+.rating {
+    background-color: var(--clr-light-blue);
+    color: var(--clr-orange);
+    font-size: .9rem;
+    padding: .5rem 1.5rem;
+    width:fit-content;
+    margin: 1.9rem auto;
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}
