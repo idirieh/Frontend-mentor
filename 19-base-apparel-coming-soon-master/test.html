@@ -1,0 +1,35 @@
+<style>
+.input-button-container {
+    display: flex; /* Use flexbox to align input and button */
+    border: 1px solid #afafaf; /* Add a border to mimic the input field */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Ensure the button doesn't overflow the container */
+    width: 300px; /* Set a width for the container */
+}
+
+input {
+    flex: 1; /* Allow the input to take up remaining space */
+    border: none; /* Remove the default input border */
+    padding: 8px; /* Add padding for better spacing */
+    outline: none; /* Remove the default focus outline */
+}
+
+button {
+    border: none; /* Remove the default button border */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    padding: 8px 16px; /* Add padding for better spacing */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+
+</style>
+
+<div class="input-button-container">
+    <input type="text" placeholder="Enter something...">
+    <button type="button">Submit</button>
+</div>
