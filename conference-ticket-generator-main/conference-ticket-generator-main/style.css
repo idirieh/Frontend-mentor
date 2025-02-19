@@ -1,0 +1,152 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap'); */
+
+
+/* using local fonts */
+@font-face {
+    font-family: "Inconsolata"; 
+    src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype'); 
+    font-weight: 400; 
+}
+@font-face {
+    font-family: "Inconsolata"; 
+    src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype'); 
+    font-weight: 500; 
+}
+@font-face {
+    font-family: "Inconsolata"; 
+    src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype'); 
+    font-weight: 700; 
+}
+@font-face {
+    font-family: "Inconsolata"; 
+    src: url('./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf') format('truetype'); 
+    font-weight: 800; 
+}
+
+
+:root {
+    /* Colors */
+    --color-Neutral-0: hsl(0, 0%, 100%);
+    --color-Neutral-300: hsl(252, 6%, 83%);
+    --color-Neutral-500: hsl(245, 15%, 58%);
+    --color-Neutral-700: hsl(245, 19%, 35%);
+    --color-Neutral-900: hsl(248, 70%, 10%);
+    --color-Orange-500: hsl(7, 88%, 67%);
+    --color-Orange-500: hsl(7, 71%, 60%);
+  
+    /* Spacing */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 24px;
+  
+    /* Typography */
+    --font-family: "Inconsolata", serif;
+    --font-size-base: 16px;
+    --font-size-large: 20px;
+    --font-w-400: 400;
+    --font-w-500: 500;
+    --font-w-700: 700;
+    --font-w-800: 800;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* CSS Reset */
+
+/* Box sizing reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+}
+
+/* Set core body defaults */
+body {
+    line-height: 1.5;
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class], ol[class] {
+    list-style: none;
+}
+
+/* A better default for images */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Normal CSS */
+body {
+    background-image: url('./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), url('./assets/images/background-mobile.png');
+    background-repeat: no-repeat;
+    background-position: bottom left, center;
+    background-size: 250px, cover;
+    /* background-position: center, bottom left;
+    background-size: cover, 50px; */
+    color: var(--color-Neutral-0);
+    height: 100vh;
+    border: 1px solid red;
+}
+
+.container {
+    position: relative;
+    width: 95%;
+    max-width: 1250px;
+    padding: 1rem;
+    margin-inline: auto;
+}
+
+/* .container::after {
+    content: url('./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg');
+    position: absolute;
+    display: inline-block;
+    object-fit: cover;
+    height: 30px;
+    width: 30px;
+    bottom: 5px;
+    left: 5px;
+    z-index: 1; 
+} */
+
+
+.heading {
+    text-align: center;
+}
+
+.logo  {
+    font-weight: var(--font-w-500);
+    font-size: var(--font-size-large);
+    display: flex;
+    gap: .80em;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 25px;
+}
+
+.hero-text {
+    margin: 1.5em 0;
+}
+
+.hero-title {
+    font-size: 1.7rem;
+    font-weight: var(--font-w-700);
+    line-height: 1;
+}
+
+.hero-subtitle {
+    color: var(--color-Neutral-300);
+    font-weight: var(--font-w-500);
+    margin: .5em 0;
+}
