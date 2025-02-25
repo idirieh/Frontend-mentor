@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Avatar</title>
+    <style>
+        body {
+            background:url('./assets/images/background-desktop.png') no-repeat center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .upload-container {
+            text-align: center;
+            width: 300px;
+        }
+
+        .upload-box {
+            width: fit-content;
+            border: 2px dashed #555;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .upload-box:hover {
+            border-color: #ff6b6b;
+        }
+
+        .upload-box img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+            border-radius: 10px;
+        }
+
+        /* .file-input {
+            display: none;
+        } */
+
+        .info-text {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="upload-container">
+        <label class="upload-box" id="uploadBox">
+            <p>Drag and drop or click to upload</p>
+            <input type="file" class="file-input" id="fileInput" accept="image/png, image/jpeg">
+            <img id="previewImage" alt="Preview">
+        </label>
+        <p class="info-text">Upload your photo (JPG or PNG, max size: 500KB).</p>
+    </div>
+
+    <script>
+        const uploadBox = document.getElementById("uploadBox");
+        const fileInput = document.getElementById("fileInput");
+        const previewImage = document.getElementById("previewImage");
+
+        uploadBox.addEventListener("click", () => fileInput.click());
+
+        fileInput.addEventListener("change", (event) => handleFile(event.target.files[0]));
+
+        uploadBox.addEventListener("dragover", (event) => {
+            event.preventDefault();
+            uploadBox.style.borderColor = "#ff6b6b";
+        });
+
+        uploadBox.addEventListener("dragleave", () => {
+            uploadBox.style.borderColor = "#555";
+        });
+
+        uploadBox.addEventListener("drop", (event) => {
+            event.preventDefault();
+            uploadBox.style.borderColor = "#555";
+            handleFile(event.dataTransfer.files[0]);
+        });
+
+        function handleFile(file) {
+            if (file && (file.type === "image/png" || file.type === "image/jpeg")) {
+                if (file.size <= 500 * 1024) { // 500KB limit
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        previewImage.src = reader.result;
+                        previewImage.style.display = "block";
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    alert("File size exceeds 500KB!");
+                }
+            } else {
+                alert("Invalid file format! Only JPG and PNG are allowed.");
+            }
+        }
+    </script>
+
+</body>
+</html>

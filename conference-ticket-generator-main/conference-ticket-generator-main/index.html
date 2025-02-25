@@ -11,7 +11,7 @@
 <body>
 
   <!-- Form starts -->
-  <div class="container">
+  <div class="container hidden">
     <div class="heading">
       <div class="logo"><img src="assets/images/logo-mark.svg" alt="">Coding Conf</div>
       <div class="hero-text">
@@ -19,30 +19,50 @@
         <p class="hero-subtitle">Secure your spot at next year's biggest coding conference.</p>
       </div>
     </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex obcaecati cum similique ipsa temporibus veritatis voluptatibus facere accusantium! Rerum asperiores dolorem at inventore commodi recusandae adipisci aliquam eaque odit unde.
-    </div>
+
     <div class="forms">
       <form action="">
-        <label for="img-upload">Upload Avatar<input type="file" name="img-upload" id="" placeholder="Drag and drop or click to upload">Upload your photo (JPG or PNG, max size: 500KB).</label>
-        <label for="full-name">Full Name<input type="text" placeholder=""> </label>
-        <label for="email">Email Address<input type="email" name="email" id="" placeholder="example@email.com"></label>
-        <label for="user-name">GitHub Username<input type="text" placeholder="@yourusername"></label>
+        
+        <div class="form_group">
+          
+          <label class="form_label" for="file-upload">Upload Avatar
+            <div class="upload_area">
+              <img src="./assets/images/icon-upload.svg" alt="">
+              <input type="file"  id="file-upload" class="hidden">
+              <p>Drag and drop or click to upload</p>
+            </div>            
+            <div class="upload_info"><img src="./assets/images/icon-info.svg" alt=""><p class="upload_note">Upload your photo (JPG or PNG, max size: 500KB).</p></div>
+          </label>
+        </div>
+        <div class="form_group">
+          <label class="form_label" for="full-name">Full Name
+            <input type="text" class="form_input" placeholder="" id="full-name" required> 
+          </label>
+        </div>
+        <div class="form_group">
+          <label class="form_label" for="email">Email Address
+            <input type="email" class="form_input" id="email" placeholder="example@email.com" required></label>
+        </div>
+        <div class="form_group">
+          <label class="form_label" for="user-name">GitHub Username
+            <input type="text" class="form_input" id="user-name" placeholder="@yourusername">
+          </label>
+        </div>
         <button id="submit-btn">Generate My Ticket</button>
       </form>
     </div>
     <!-- Form ends -->
 
-    <!-- Generated tickets starts -->
-
-    <!-- Congrats, Your Full Name! Your ticket is ready.
-
-    We've emailed your ticket to your Email and will send updates in the run up to the event.
-
-    Coding Conf
-    Jan 31, 2025 / Austin, TX -->
-
-    <!-- Generated tickets ends -->
+  <div class="container">
+  
+      <div class="hero-text">
+        <h1 class="hero-title">Congrats, Your Full Name! Your ticket is ready.</h1>
+        <div class="hero-subtitle">We've emailed your ticket to your Email and will send updates in the run up to the event.</div>
+      </div>
+  
+      Coding Conf
+      Jan 31, 2025 / Austin, TX
+  </div>
     
     <!-- <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 

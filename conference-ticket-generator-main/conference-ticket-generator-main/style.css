@@ -32,7 +32,7 @@
     --color-Neutral-700: hsl(245, 19%, 35%);
     --color-Neutral-900: hsl(248, 70%, 10%);
     --color-Orange-500: hsl(7, 88%, 67%);
-    --color-Orange-500: hsl(7, 71%, 60%);
+    --color-Orange-600: hsl(7, 71%, 60%);
   
     /* Spacing */
     --spacing-small: 8px;
@@ -64,6 +64,10 @@
     margin: 0;
 }
 
+html {
+    height: 100%;
+}
+
 /* Set core body defaults */
 body {
     line-height: 1.5;
@@ -86,15 +90,14 @@ img {
 
 /* Normal CSS */
 body {
-    background-image: url('./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), url('./assets/images/background-mobile.png');
+    background-image: url('./assets/images/pattern-lines.svg'), url('./assets/images/pattern-squiggly-line-top.svg'), url('./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg'), url('./assets/images/background-mobile.png');
     background-repeat: no-repeat;
-    background-position: bottom left, center;
-    background-size: 250px, cover;
-    /* background-position: center, bottom left;
-    background-size: cover, 50px; */
+    background-position: top center, top right, bottom left, center;
+    background-size: auto, 100px, 300px, cover;
     color: var(--color-Neutral-0);
-    height: 100vh;
-    border: 1px solid red;
+    height: 100%;
+    overflow: auto;
+    white-space: normal;
 }
 
 .container {
@@ -105,21 +108,9 @@ body {
     margin-inline: auto;
 }
 
-/* .container::after {
-    content: url('./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg');
-    position: absolute;
-    display: inline-block;
-    object-fit: cover;
-    height: 30px;
-    width: 30px;
-    bottom: 5px;
-    left: 5px;
-    z-index: 1; 
-} */
-
-
 .heading {
     text-align: center;
+    margin: 1.2em 0;
 }
 
 .logo  {
@@ -136,17 +127,130 @@ body {
 }
 
 .hero-text {
-    margin: 1.5em 0;
+    margin: 2em 0;
 }
 
 .hero-title {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: var(--font-w-700);
     line-height: 1;
 }
 
 .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-Neutral-300);
+    font-weight: var(--font-w-700);
+    margin: .7em 0;
+}
+
+.forms {
     color: var(--color-Neutral-300);
     font-weight: var(--font-w-500);
-    margin: .5em 0;
+    max-width: 550px;
+    margin-inline: auto;
+    margin-bottom: 1em;
 }
+
+.form_group {
+    margin: 1.8rem 0;
+}
+
+.upload_area {
+    min-height: 120px;
+    text-align: center;
+    padding: 1rem;
+    border: 2px dashed var(--color-Neutral-700);
+    cursor: pointer;
+}
+
+.upload_area img {
+    background-color: hsla(245, 15%, 58%, 30%);
+    padding: .6rem;
+    margin-inline: auto;
+    border-radius: 8px;
+}
+
+.upload_area p {
+    color: var(--color-Neutral-500);
+    margin: .8rem 0 -1rem;
+}
+
+.form_input, .upload_area {
+    background-color: hsla(245, 19%, 35%, 30%);
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+    margin: .5rem 0 0;
+}
+
+.form_group .upload_info {
+    color: var(--color-Neutral-300);
+    display: flex;
+    gap: .5rem;
+    margin: .5rem 0;
+}
+
+.form_group .form_label, .form_input {
+    color: var(--color-Neutral-0);
+    font-size: 1.1rem;
+}
+
+.form_group .form_input {
+    display: block;
+    padding: .7rem;
+    border: 1px solid var(--color-Neutral-700);
+}
+
+.form_group .form_input:focus {
+    outline: 2px solid var(--color-Neutral-300);
+}
+
+/* input[type="email"] {
+    color: red
+} */
+
+.upload_note {
+    font-size: .7rem;
+}
+
+#submit-btn {
+    background-color: var(--color-Orange-500);
+    color: var(--color-Neutral-900);
+    font-size: 1rem;
+    font-weight: var(--font-w-700);
+    width: 100%;
+    padding: 1em;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: var(--color-Orange-600);
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width: 40em) {
+    html {
+        height: auto;
+    }
+    body {
+        background:
+        url('./assets/images/pattern-lines.svg') no-repeat top center,
+        url('./assets/images/pattern-squiggly-line-top.svg') no-repeat top right,
+        url('./assets/images/pattern-squiggly-line-bottom-desktop.svg') no-repeat bottom left,
+        url('./assets/images/background-desktop.png') no-repeat center /cover ;
+    }
+    .heading .hero-title {
+        font-size: 3rem;
+        max-width: 30ch;
+        margin-inline: auto;
+    }
+}
+
+/* Generated tickets */
+
