@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Ticket</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .ticket {
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+            background: url('./assets/images/pattern-ticket.svg') no-repeat center center/cover;
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        
+        .ticket .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .ticket .event-date {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .ticket .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .ticket .user-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        
+        .ticket .user-info .username {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ticket .username .handle {
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 500px) {
+            .ticket {
+                padding: 15px;
+            }
+            .ticket .user-info img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="logo">Coding Conf</div>
+        <div class="event-date">Jan 31, 2025 / Austin, TX</div>
+        <div class="user-info">
+            <img src="./assets/images/image-avatar.jpg" alt="User Profile">
+            <div class="username">
+                <strong>Jonatan Kristof</strong>
+                <span class="handle">@jonatankristof0101</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
