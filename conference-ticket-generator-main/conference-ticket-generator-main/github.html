@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <style>
+        @font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf");
+}
+
+:root {
+  /* Colors */
+  --White: hsl(0, 0%, 100%);
+  --Gray: hsl(245, 15%, 58%);
+  --Navy: hsl(248, 70%, 10%);
+  --Orange: hsl(7, 88%, 67%);
+  /* Sizes */
+  --sm: 0.5rem;
+  --md: 0.75rem;
+  --la: 1rem;
+  --xl: 1.5rem;
+  --xxl: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+label,
+input {
+  display: inline-block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  outline: 0;
+  border: 0;
+}
+
+html {
+  font-size: 20px;
+  font-family: "Inconsolata";
+}
+
+body {
+  padding: var(--la) 0;
+  background-color: var(--Navy);
+}
+
+.container {
+  width: min(90%, 750px);
+  margin: var(--xl) auto;
+  text-align: center;
+}
+
+.container section {
+  display: none;
+  color: var(--White);
+}
+
+section.active {
+  display: block;
+}
+
+.container__header {
+  margin-bottom: var(--2xl);
+}
+
+.main__intro,
+.intro__body,
+.intro__form,
+.form__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--la);
+}
+
+.intro__form {
+  gap: var(--xl);
+}
+
+.form__box {
+  gap: var(--sm);
+}
+
+.box__label {
+  text-align: left;
+}
+
+.box__input {
+  padding: var(--sm) var(--md);
+  background-color: rgba(100%, 100%, 100%, 10%);
+  border: 1px solid var(--Gray);
+  border-radius: 0.25rem;
+  color: var(--White);
+}
+
+.box__input::placeholder {
+  color: var(--Gray);
+}
+
+input[type="button"] {
+  background-color: var(--Orange);
+  color: var(--Navy);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.custom-upload {
+  position: relative;
+  padding: var(--xl) var(--md);
+  background-color: rgba(100%, 100%, 100%, 10%);
+  border: 2px dashed var(--Gray);
+  border-radius: 0.25rem;
+  color: var(--Gray);
+}
+
+.custom-upload > div {
+  display: none;
+}
+
+.custom-upload div.active {
+  display: block;
+}
+
+.custom-upload img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.buttons {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: var(--md);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--md);
+}
+
+.buttons input {
+  width: fit-content;
+  padding: var(--sm);
+}
+
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.box__note {
+  text-align: left;
+  font-size: var(--md);
+}
+
+.box__note .msg {
+  opacity: 0.5;
+}
+
+.box__note span {
+  display: none;
+}
+
+.box__note .active {
+  display: inline-block;
+}
+
+.error {
+  display: none;
+  text-align: left;
+  font-size: var(--la);
+  opacity: 0.5;
+  color: yellow;
+}
+
+.error.active {
+  display: inline-block;
+}
+
+.display__ticket {
+  position: relative;
+  max-width: 600px;
+  margin: var(--2xl) auto;
+}
+
+.ticket__card {
+  width: 100%;
+  height: 100%;
+}
+
+.ticket__card svg {
+  display: block;
+  height: 100%;
+}
+
+.ticket__info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: min(90%, 200px);
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sm);
+}
+
+.display__ticket .wrapper,
+.display__ticket .sub-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.display__ticket .wrapper > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  gap: var(--la);
+}
+
+.display__ticket h3 {
+  font-size: clamp(var(--sm), 4vw + 0.25rem, var(--xl));
+}
+
+.display__ticket h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6125rem;
+}
+
+.display__ticket .ticket__number {
+  transform: rotate(90deg);
+  opacity: 0.5;
+}
+
+.person-avatar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+    </style>
+    <title>Frontend Mentor | Conference ticket generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="container__header">
+        <img src="./assets/images/logo-full.svg" alt="Conference Logo" />
+      </header>
+      <main class="container__main">
+        <section class="main__intro active">
+          <div class="intro__body">
+            <h1 class="body__title">Your Journey to Coding Conf 2025 Starts Here!</h1>
+            <h2 class="body__text">Secure your spot at next year's biggest coding conference.</h2>
+          </div>
+          <form action="#" class="intro__form">
+            <div class="form__box">
+              <label for="file" class="box__label">Upload Avatar</label>
+              <div class="custom-upload">
+                <div class="custom-upload__empty active">
+                  <img src="./assets/images/icon-upload.svg" alt="Upload Icon" />
+                  <p>Drag and drop or click to upload</p>
+                  <input type="file" accept="image/jpeg,image/png" id="file" class="box__input" />
+                </div>
+                <div class="custom-upload__loaded">
+                  <div class="custom-upload__image">
+                    <img src="./assets/images/image-avatar.jpg" alt="Your Avatar" />
+                  </div>
+                  <div id="buttonsBox" class="buttons">
+                    <input type="button" id="remove" value="Remove image" />
+                    <input type="button" id="change" value="Change image" />
+                  </div>
+                </div>
+              </div>
+              <p class="box__note">
+                <img src="./assets/images/icon-info.svg" alt="Note Icon" />
+                <span class="msg active">Upload your photo (JPG or PNG, max size: 500KB).</span>
+                <span class="error">Please upload a small photo!</span>
+              </p>
+            </div>
+            <div class="form__box">
+              <label for="text" class="box__label">Full Name</label>
+              <input type="text" id="name" class="box__input" placeholder="John Doe" />
+              <p class="error">Enter your name man!</p>
+            </div>
+            <div class="form__box">
+              <label for="email" class="box__label">Email Address</label>
+              <input type="email" id="email" class="box__input" placeholder="example@email.com" />
+              <p class="error">Enter a valid email man!</p>
+            </div>
+            <div class="form__box">
+              <label for="text" class="box__label">GitHub Username</label>
+              <input type="text" id="userName" class="box__input" placeholder="@yourusername" />
+              <p class="error">Enter your username bro!</p>
+            </div>
+            <div class="form__box">
+              <input type="button" id="submit" value="Generate My Ticket" class="box__input" />
+            </div>
+          </form>
+        </section>
+        <section class="main__display">
+          <h2 class="display__title">
+            Congrats,
+            <span class="person-name"></span>
+            ! Your ticket is ready.
+          </h2>
+          <p class="display__text">
+            We've emailed your ticket to
+            <span class="person-email"></span>
+            and will send updates in the run up to the event.
+          </p>
+          <div class="display__ticket">
+            <div class="ticket__card">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 600 280">
+                <g filter="url(#a)">
+                  <mask id="d" fill="#fff">
+                    <path
+                      fill-rule="evenodd"
+                      d="M0 12C0 5.373 5.373 0 12 0h438.958c5.37 0 9.876 3.759 12.94 8.169C468.863 15.319 477.135 20 486.5 20s17.637-4.681 22.602-11.831c3.064-4.41 7.57-8.169 12.94-8.169H588c6.627 0 12 5.373 12 12v256c0 6.627-5.373 12-12 12h-65.958c-5.37 0-9.876-3.759-12.94-8.169C504.137 264.681 495.865 260 486.5 260s-17.637 4.681-22.602 11.831c-3.064 4.41-7.57 8.169-12.94 8.169H12c-6.627 0-12-5.373-12-12V12Z"
+                      clip-rule="evenodd"
+                    />
+                  </mask>
+                  <path
+                    fill="url(#b)"
+                    fill-rule="evenodd"
+                    d="M0 12C0 5.373 5.373 0 12 0h438.958c5.37 0 9.876 3.759 12.94 8.169C468.863 15.319 477.135 20 486.5 20s17.637-4.681 22.602-11.831c3.064-4.41 7.57-8.169 12.94-8.169H588c6.627 0 12 5.373 12 12v256c0 6.627-5.373 12-12 12h-65.958c-5.37 0-9.876-3.759-12.94-8.169C504.137 264.681 495.865 260 486.5 260s-17.637 4.681-22.602 11.831c-3.064 4.41-7.57 8.169-12.94 8.169H12c-6.627 0-12-5.373-12-12V12Z"
+                    clip-rule="evenodd"
+                  />
+                  <path
+                    fill="url(#c)"
+                    d="m463.898 271.831 1.232.856-1.232-.856Zm45.204 0 1.232-.856-1.232.856Zm0-263.662 1.232.856-1.232-.856Zm-45.204 0-1.232.856 1.232-.856ZM450.958-1.5H12v3h438.958v-3Zm35.542 20c-8.853 0-16.673-4.423-21.37-11.187l-2.464 1.712C467.9 16.56 476.623 21.5 486.5 21.5v-3Zm21.37-11.187C503.173 14.077 495.353 18.5 486.5 18.5v3c9.877 0 18.6-4.94 23.834-12.475l-2.464-1.712ZM588-1.5h-65.958v3H588v-3ZM601.5 268V12h-3v256h3Zm-79.458 13.5H588v-3h-65.958v3Zm-35.542-20c8.853 0 16.673 4.423 21.37 11.187l2.464-1.712C505.1 263.439 496.377 258.5 486.5 258.5v3Zm-21.37 11.187c4.697-6.764 12.517-11.187 21.37-11.187v-3c-9.877 0-18.6 4.939-23.834 12.475l2.464 1.712ZM12 281.5h438.958v-3H12v3ZM-1.5 12v256h3V12h-3ZM12 278.5c-5.799 0-10.5-4.701-10.5-10.5h-3c0 7.456 6.044 13.5 13.5 13.5v-3Zm450.666-7.525c-2.952 4.25-7.065 7.525-11.708 7.525v3c6.097 0 10.997-4.242 14.172-8.813l-2.464-1.712Zm59.376 7.525c-4.643 0-8.756-3.275-11.708-7.525l-2.464 1.712c3.175 4.571 8.075 8.813 14.172 8.813v-3ZM588 1.5c5.799 0 10.5 4.701 10.5 10.5h3c0-7.456-6.044-13.5-13.5-13.5v3Zm-77.666 7.525c2.952-4.25 7.065-7.525 11.708-7.525v-3c-6.097 0-10.997 4.242-14.172 8.813l2.464 1.712ZM12-1.5C4.544-1.5-1.5 4.544-1.5 12h3C1.5 6.201 6.201 1.5 12 1.5v-3ZM598.5 268c0 5.799-4.701 10.5-10.5 10.5v3c7.456 0 13.5-6.044 13.5-13.5h-3ZM450.958 1.5c4.643 0 8.756 3.275 11.708 7.525l2.464-1.712c-3.175-4.571-8.075-8.813-14.172-8.813v3Z"
+                    mask="url(#d)"
+                  />
+                </g>
+                <rect width="3" height="16" x="485" y="42" fill="#fff" opacity=".2" rx="1.5" />
+                <rect width="3" height="16" x="485" y="72" fill="#fff" opacity=".2" rx="1.5" />
+                <rect width="3" height="16" x="485" y="102" fill="#fff" opacity=".2" rx="1.5" />
+                <rect width="3" height="16" x="485" y="132" fill="#fff" opacity=".2" rx="1.5" />
+                <rect width="3" height="16" x="485" y="162" fill="#fff" opacity=".2" rx="1.5" />
+                <rect width="3" height="16" x="485" y="192" fill="#fff" opacity=".2" rx="1.5" />
+                <rect width="3" height="16" x="485" y="222" fill="#fff" opacity=".2" rx="1.5" />
+                <defs>
+                  <linearGradient id="b" x1="610" x2="69.328" y1="26.462" y2="306.194" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#fff" stop-opacity=".3" />
+                    <stop offset="1" stop-color="#fff" stop-opacity=".1" />
+                  </linearGradient>
+                  <linearGradient id="c" x1="0" x2="599.999" y1="140" y2="139.351" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#fff" />
+                    <stop offset="1" stop-color="#F37362" />
+                  </linearGradient>
+                  <filter
+                    id="a"
+                    width="680"
+                    height="360"
+                    x="-40"
+                    y="-40"
+                    color-interpolation-filters="sRGB"
+                    filterUnits="userSpaceOnUse"
+                  >
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="20" />
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_107_802" />
+                    <feBlend in="SourceGraphic" in2="effect1_backgroundBlur_107_802" result="shape" />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+            <div class="ticket__info">
+              <div class="wrapper">
+                <div class="conf-info">
+                  <img src="./assets/images/logo-mark.svg" alt="Conference Logo" />
+                  <div class="sub-wrapper">
+                    <h3>Coding Conf</h3>
+                    <h4>Jan 31, 2025 / Austin, TX</h4>
+                  </div>
+                </div>
+                <div class="person-info">
+                  <div class="person-avatar"></div>
+                  <div class="sub-wrapper">
+                    <h3 class="person-name"></h3>
+                    <h4>
+                      <img src="./assets/images/icon-github.svg" alt="GitHub Icon" />
+                      <span class="person-username"></span>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+              <h5 class="ticket__number"></h5>
+            </div>
+        </div>
+        </section>
+      </main>
+    </div>
+    <script>
+        const formSection = document.querySelector(".main__intro");
+const displaySection = document.querySelector(".main__display");
+const form = document.forms[0];
+const fileInput = form.file;
+const nameInput = form.name;
+const emailInput = form.email;
+const userNameInput = form.userName;
+const submitButton = form.submit;
+const emptyUploadBox = document.querySelector(".custom-upload__empty");
+const loadedUploadBox = document.querySelector(".custom-upload__loaded");
+const uploadedImgBox = document.querySelector(".custom-upload__image");
+const ImgButtonsBox = document.getElementById("buttonsBox");
+const removeImgButton = form.remove;
+const changeImgButton = form.change;
+const errorTexts = document.querySelectorAll(".error");
+const fileMsg = document.querySelector(".msg");
+const ticketAvatar = document.querySelector(".person-avatar");
+const ticketName = document.querySelectorAll(".person-name");
+const ticketEmail = document.querySelector(".person-email");
+const ticketUserName = document.querySelector(".person-username");
+const ticketNumber = document.querySelector(".ticket__number");
+const inputArr = [fileInput, nameInput, emailInput, userNameInput];
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+let done = false;
+let errorList = {};
+
+submitButton.addEventListener("click", () => {
+  errorList = {
+    file: false,
+    name: false,
+    email: false,
+    userName: false,
+  };
+  errorTexts.forEach((error) => error.classList.remove("active"));
+  fileMsg.classList.add("active");
+  inputArr.forEach((input) => validateInput(input));
+  done = Object.values(errorList).every((value) => value == false);
+  if (done) {
+    let data = {
+      file: uploadedImgBox.innerHTML,
+      name: nameInput["value"],
+      email: emailInput["value"],
+      userName: userNameInput["value"],
+    };
+    // Send the data
+    form.reset();
+    formSection.classList.remove("active");
+    displaySection.classList.add("active");
+    updateTicketDOM(data);
+  } else {
+    updateErrorsDOM();
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  updateFile();
+});
+
+function updateFile() {
+  const file = fileInput.files[0];
+  const validTypes = ["image/jpeg", "image/png"];
+
+  if (file) {
+    if (validTypes.includes(file.type)) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        updateUploadBoxDOM(true, e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+    validateFile(file);
+  }
+}
+
+function validateFile(file) {
+  const maxSize = 0.5 * 1024 * 1024;
+  if (file.size > maxSize) {
+    fileInput.value = "";
+  }
+}
+
+function validateInput(input) {
+  let value = input.value;
+  if (value == "" || (input.id != "file" && value.length > 20)) {
+    errorList[input.id] = true;
+  } else {
+    errorList[input.id] = false;
+  }
+  if (input.id == "email" && !emailRegex.test(value)) {
+    errorList[input.id] = true;
+  }
+}
+
+function updateErrorsDOM() {
+  Object.entries(errorList).forEach((entry) => {
+    if (entry[1] == true) {
+      if (entry[0] == "file") {
+        fileMsg.classList.remove("active");
+        fileMsg.nextElementSibling.classList.add("active");
+      } else {
+        document.getElementById(entry[0]).nextElementSibling.classList.add("active");
+      }
+    }
+  });
+}
+
+ImgButtonsBox.addEventListener("click", (e) => {
+  if (e.target == removeImgButton || e.target == changeImgButton) {
+    updateUploadBoxDOM(false);
+    updateFile();
+  }
+});
+
+function updateUploadBoxDOM(wantToAdd, img) {
+  if (wantToAdd) {
+    uploadedImgBox.innerHTML = `<img src="${img}" alt="Your Avatar" />`;
+    emptyUploadBox.classList.remove("active");
+    loadedUploadBox.classList.add("active");
+  } else {
+    fileInput.value = "";
+    uploadedImgBox.innerHTML = "";
+    emptyUploadBox.classList.add("active");
+    loadedUploadBox.classList.remove("active");
+  }
+}
+
+function updateTicketDOM(data) {
+  ticketNumber.innerHTML = "";
+  ticketAvatar.innerHTML = data["file"];
+  ticketName.forEach((field) => (field.innerHTML = data["name"]));
+  ticketEmail.innerHTML = data["email"];
+  ticketUserName.innerHTML = data["userName"];
+  ticketNumber.innerHTML = generateTicketNumber();
+}
+
+function generateTicketNumber() {
+  let generatedNumber = "";
+  const random = "fABCDEF0123456789";
+  const numberLength = 5;
+
+  for (let i = 0; i < numberLength; i++) {
+    generatedNumber += random[Math.trunc(random.length * Math.random())];
+  }
+
+  generatedNumber = "#" + generatedNumber;
+  return generatedNumber;
+}
+    </script>
+  </body>
+</html>

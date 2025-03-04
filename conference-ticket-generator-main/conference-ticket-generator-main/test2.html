@@ -1,0 +1,136 @@
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1A237E, #5C6BC0); /* Gradient background */
+}
+
+/* Ticket Container */
+.ticket-container {
+  background-image: url('./assets/images/pattern-ticket.svg'); /* Replace with your ticket shape image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90%; /* Responsive width */
+  max-width: 600px; /* Maximum width */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px; /* Adjust size as needed */
+}
+
+/* Conference Info */
+.conference-info {
+  text-align: center;
+  margin-top: 30px; /* Adjust spacing */
+}
+
+.conference-info h2 {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.conference-info p {
+  font-size: 1em;
+  color: #eee;
+  margin: 0;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.user-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.user-info div {
+  text-align: left;
+}
+
+.user-info h3 {
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0;
+}
+
+.user-info p {
+  font-size: 1em;
+  color: #eee;
+  margin: 5px 0 0;
+}
+
+/* Ticket Number */
+.ticket-number {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(90deg);
+  color: #fff;
+  font-size: 1.2em;
+}
+
+/* Responsive Adjustments */
+/* @media (max-width: 480px) {
+  .conference-info h2 {
+    font-size: 1.5em;
+  }
+
+  .user-info img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-info h3 {
+    font-size: 1em;
+  }
+
+  .user-info p {
+    font-size: 0.9em;
+  }
+
+  .ticket-number {
+    font-size: 1em;
+  }
+} */
+</style>
+
+<div class="ticket-container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="conference-info">
+      <h2>Coding Conf</h2>
+      <p>Jan 31, 2025 / Austin, TX</p>
+    </div>
+    <div class="user-info">
+      <img src="./assets/images/image-avatar.jpg" alt="User Photo">
+      <div>
+        <h3>Jonatan Kristof</h3>
+        <p>◉ @jonatankristof0101</p>
+      </div>
+    </div>
+    <div class="ticket-number">#01609</div>
+  </div>
