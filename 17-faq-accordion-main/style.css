@@ -91,14 +91,14 @@ body {
 .answer {
     color: var(--clr-grayish-purple);
     margin: 1.5rem 0;
-    height: 0;
+    display: none;
     overflow: hidden;
     box-shadow: 0 2px 0 hsla(292, 16%, 49%, 30%);
-    transition: 500ms ease-in-out;
+    transition: 500ms;
 }
 
 .active {
-    height: auto;
+    display: block;
     padding-bottom: 1em;
 }
 
