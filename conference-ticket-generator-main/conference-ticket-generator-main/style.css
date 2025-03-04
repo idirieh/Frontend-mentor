@@ -246,9 +246,13 @@ body {
 /* Generated tickets */
 
 #user_fullname {
-    background: linear-gradient(var(--color-linear-1), var(--color-linear-2));
+    background: linear-gradient(to right, var(--color-linear-1), var(--color-linear-2));
     background-clip: text;
     color: transparent;
+}
+
+#user-email {
+    color: var(--color-Orange-500);
 }
 
 .display__ticket {
@@ -277,7 +281,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--sm);
+    padding: 0 var(--md);
   }
   
   .display__ticket .wrapper,
@@ -292,13 +296,13 @@ body {
   .display__ticket .wrapper > div {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     gap: var(--la);
   }
   
   .display__ticket h3 {
-    font-size: clamp(var(--sm), 4vw + 0.25rem, var(--xxl));
+    font-size: clamp(var(--sm), 4vw + 0.35rem, var(--xxl));
   }
   
   .display__ticket h4 {
@@ -309,18 +313,19 @@ body {
   }
   
   .display__ticket .ticket__number {
-    font-size: clamp(var(--sm), 4vw + 0.25rem, var(--xxl));;
+    font-size: clamp(var(--sm), 4vw + 0.35rem, var(--xxl));;
     transform: rotate(90deg);
     opacity: 0.5;
   }
 
   .sub-wrapper h4, .person-username {
-    font-size: clamp(var(--md), 1.5vw + 0.25rem, var(--xl));
+    color: var(--color-Neutral-500);
+    font-size: clamp(var(--sm), 1.5vw + 0.35rem, 1rem);
   }
   
   .person-avatar img {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     align-self: center;  
     display: block;      
@@ -328,6 +333,9 @@ body {
     border-radius: 5px;
   }
 
+  .conf-info {
+    align-self: flex-start;
+  }
 
 
 @media screen and (min-width: 40em) {
@@ -344,6 +352,14 @@ body {
     .heading .hero-title {
         font-size: 3rem;
         max-width: 30ch;
+        margin-inline: auto;
+    }
+    .person-avatar img {
+        width: 70px;
+        height: 70px;
+    }
+    .ticket-subtitle {
+        max-width: 40ch;
         margin-inline: auto;
     }
 }
