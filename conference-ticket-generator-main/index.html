@@ -21,7 +21,7 @@
     </div>
 
     <div class="forms">
-      <form action="" onsubmit="event.preventDefault()">
+      <form action="" onsubmit="event.preventDefault(); validateForm();">
         
         <div class="form_group">
           
@@ -29,28 +29,32 @@
             <div class="upload_area">
               <img src="./assets/images/icon-upload.svg" alt="">
               <input type="file"  id="file-upload" class="hidden">
-              <p>Drag and drop or click to upload</p>
+              <p id="drag-text">Drag and drop or click to upload</p>
             </div>            
             <div class="upload_info"><img src="./assets/images/icon-info.svg" alt=""><p class="upload_note">Upload your photo (JPG or PNG, max size: 500KB).</p></div>
           </label>
         </div>
-        <div class="form_group">
+        <div class="form_group fullname_group">
           <label class="form_label" for="full-name">Full Name
             <input type="text" class="form_input" placeholder="" id="full-name" required> 
           </label>
         </div>
-        <div class="form_group">
+        <div class="form_group email_group">
           <label class="form_label" for="email">Email Address
-            <input type="email" class="form_input" id="email" placeholder="example@email.com" required></label>
+            <input type="email" class="form_input" id="email" placeholder="example@email.com"></label>
         </div>
-        <div class="form_group">
+        <div class="form_group username_group">
           <label class="form_label" for="user-name">GitHub Username
             <input type="text" class="form_input" id="user-name" placeholder="@yourusername">
           </label>
         </div>
-        <button id="submit-btn">Generate My Ticket</button>
+
+
+        <button id="submit-btn" type="submit">Generate My Ticket</button>
       </form>
     </div>
+
+    
     <!-- Form ends -->
   </div>
 
@@ -133,7 +137,7 @@
               </div>
               <div class="person-info">
                 <div class="person-avatar">
-                  <img src="./assets/images/image-avatar.jpg" alt="">
+                  <img src="./assets/images/image-avatar.jpg" alt="" id="img-avatar">
                 </div>
                 <div class="sub-wrapper">
                   <h3 class="person-name">Jonatan Kristof</h3>
